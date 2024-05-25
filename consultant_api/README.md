@@ -1,5 +1,6 @@
 ## Consultant
 
+## This project is live at https://cons-1.onrender.com/
 * 
 CONSULTER is a cybersecurity consulting company that provides cutting-edge security solutions to protect businesses from  ever evolving cyber threats, ensuring their data and systems remain secure and resilient.
 
@@ -59,6 +60,7 @@ python3 manage.py runserver
 
 
 <h4>Sample snippet to get all projects</h4>
+
 ```
 def project_list(request):
     """
@@ -83,7 +85,7 @@ def project_list(request):
         
         return JsonResponse(project_data, safe=False)
 
-
+```
 
 
 ## BLOG POSTS
@@ -113,6 +115,7 @@ def blog_detail(request, pk):
         return JsonResponse(post_data)
     except BlogPost.DoesNotExist:
         return JsonResponse({"error": "Blog post not found"}, status=404)
+
 ```
 
 
@@ -123,6 +126,7 @@ def blog_detail(request, pk):
 * GET /api/comments/{id}: retrieve comment by id
 * POST /api/comments: create a new comment
 <h4>sample snippet</h4>
+
 ```
 def comment(request, pk):
     """
@@ -145,6 +149,7 @@ def comment(request, pk):
                          "month": c.month, 
                          "year": c.year} for c in comments]
         return JsonResponse(comment_data, safe=False)
+```
 
 
 
@@ -177,6 +182,7 @@ def service_detail(request, pk):
         return JsonResponse(s_data)
     except Service.DoesNotExist:
         return JsonResponse({"error": "service not found"}, status=404)
+        ```
 
 
 ## TEAM
@@ -184,6 +190,7 @@ def service_detail(request, pk):
 * GET /api/team/{id}: retrieve team member details by id
 
 <h4>sample snippet</h4>
+
 ```
 def team_detail(request, pk):
     """
@@ -214,6 +221,7 @@ def team_detail(request, pk):
         return JsonResponse(t_data)
     except Team.DoesNotExist:
         return JsonResponse({"error": "member not found"}, status=404)
+```
 
 
 ### KNOWN BUGS
