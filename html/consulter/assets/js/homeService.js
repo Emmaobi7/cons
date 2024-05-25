@@ -21,7 +21,7 @@ async function getServices() {
                             <h5 class="title color-secondary">${item.title}</h5>
                         </div>
 
-                        <a href="our-project.html?id=${item.id}" class="theme-btn"><i class="icon-arrow-right-2"></i></a>
+                        <a href="our-project-details.html?${item.id}" class="theme-btn"><i class="icon-arrow-right-2"></i></a>
                     </div>
                 </div>
             </div>

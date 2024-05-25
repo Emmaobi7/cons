@@ -1,10 +1,10 @@
 
-const form = document.getElementById("commentFormPK");
+const formK = document.getElementById("commentFormPK");
 
 
 
 
-let handleSubmit = async function onFormSubmit(e) {
+let handleSubmitK = async function onFormSubmitK(e) {
     e.preventDefault();
 	const data = new FormData(e.target);
     const api_data = {
@@ -15,9 +15,9 @@ let handleSubmit = async function onFormSubmit(e) {
 
 
     try {
-        console.log(api_data.name)
+        
         const options = {headers: { 'Content-Type': 'application/json'  }};
-        const req = await axios.post(`${BASE_API_URL}api/posts/{ID}/comments/`, api_data, options)
+        const req = await axios.post(`${BASE_API_URL}api/posts/${ID}/comments/`, api_data, options)
         console.log(req.data);
         alert('Your message has been sent successfully!');
         form.reset();
@@ -27,4 +27,4 @@ let handleSubmit = async function onFormSubmit(e) {
     }
 }
 
-form.addEventListener("submit", handleSubmit);
+formK.addEventListener("submit", handleSubmitK);

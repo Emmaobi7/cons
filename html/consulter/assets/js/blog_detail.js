@@ -119,20 +119,7 @@ function generateMarkup(item) {
                             <div class="comment-form-wrap">
                                 <h4>Leave a Reply</h4>
 
-                                <form action="#" class="comment-form" id="commentFormPK" method="post">
-                                    <div class="single-form-input">
-                                        <textarea name="content id="content" placeholder="Your comment"></textarea>
-                                    </div>
-                                    <div class="input__wrapper w-100 d-flex flex-column flex-sm-row">
-                                        <div class="single-form-input">
-                                            <input name="author" id="author" type="text" placeholder="Your name">
-                                        </div>
-                                        
-                                    </div>
-                                    
-                                    
-                                    <button class="theme-btn submit-btn" type="submit">Post Comment</button>
-                                </form>
+                                
                             </div>
                         </div>
                     </div> 
