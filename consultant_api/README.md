@@ -160,6 +160,7 @@ def comment(request, pk):
 * GET /api/service: list all services
 * GET /api/service/{id}: retrieve service by id
 <h4>sample snippet</h4>
+
 ```
 def service_detail(request, pk):
     """
@@ -182,7 +183,7 @@ def service_detail(request, pk):
         return JsonResponse(s_data)
     except Service.DoesNotExist:
         return JsonResponse({"error": "service not found"}, status=404)
-        ```
+```
 
 
 ## TEAM
