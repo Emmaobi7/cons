@@ -10,6 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import pymysql
+
+pymysql.install_as_MySQLdb()
+
 from pathlib import Path
 from dotenv import load_dotenv
 import os
@@ -27,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -65,8 +69,7 @@ MIDDLEWARE = [
 
 # Allow specific origins
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Front-end address
-    "http://127.0.0.1:8000",
+    "https://cons-jsju.onrender.com",
 ]
 
 CORS_ORIGIN_ALLOW_ALL = False
@@ -108,12 +111,24 @@ WSGI_APPLICATION = 'consultant_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.getenv("DJANGO_DATABASE_NAME"),
+        'USER': os.getenv("DJANGO_DATABASE_USER"),
+        'PASSWORD': os.getenv("DJANGO_DATABASE_PASSWORD"),
+        'HOST': os.getenv("DJANGO_DATABASE_HOST"),
+        'PORT': os.getenv("DJANGO_DATABASE_PORT"),  
     }
 }
+
 
 
 # Password validation

@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from .models import Projects
+from .models import Project
 import json
 from django.views.decorators.csrf import csrf_exempt
 
@@ -16,7 +16,7 @@ def project_list(request):
     return: json response
     """
     if request.method == "GET":
-        projects = Projects.objects.all()
+        projects = Project.objects.all()
         project_data = [{"title": project.title,
                          "id": project.id, 
                          "category": project.category,
@@ -32,7 +32,7 @@ def project_list(request):
     
     if request.method == "POST":
         data = json.loads(request.body)
-        new_project = Projects.objects.create(
+        new_project = Project.objects.create(
             title=data['title'],
             category=data['category'],
             content=data['content'],
@@ -60,7 +60,7 @@ def project_detail(request, pk):
     return: json data
     """
     try:
-        project = Projects.objects.get(pk=pk)
+        project = Project.objects.get(pk=pk)
         project_data = {"title": project.title, 
                         "category": project.category, 
                         "content": project.content, 
@@ -71,5 +71,5 @@ def project_detail(request, pk):
                         "image_url": project.image_url, 
                         "date_created": project.date_created} 
         return JsonResponse(project_data)
-    except Projects.DoesNotExist:
+    except Project.DoesNotExist:
         return JsonResponse({"error": "project not found"}, status=404)
