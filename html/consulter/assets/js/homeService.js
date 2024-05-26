@@ -62,10 +62,10 @@ async function getBlog_3() {
 
                             <div class="content pr-sm-25 pr-xs-15 pl-xs-15 pl-sm-25 pr-xs-15 pr-30 pb-30 pl-30">
                                 <div class="post-author mb-5">
-                                    <a href="blog-details.html?id=${item.id}">${item.category}</a>
+                                    <a href="blog-details.html?${item.id}">${item.category}</a>
                                 </div>
 
-                                <h4><a href="blog-details.html?id=${item.id}">${item.title}</a></h4>
+                                <h4><a href="blog-details.html?${item.id}">${item.title}</a></h4>
 
                                 <div class="btn-link-share mt-xs-10 mt-sm-10 mt-15">
                                     <a href="blog-details.html?${item.id}" class="theme-btn btn-border">Read More <i class="fas fa-long-arrow-alt-right"></i></a>
