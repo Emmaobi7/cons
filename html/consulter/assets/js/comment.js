@@ -8,7 +8,7 @@ let handleSubmitK = async function onFormSubmitK(e) {
     e.preventDefault();
 	const data = new FormData(e.target);
     const api_data = {
-        author: data.get("email"),
+        author: data.get("author"),
         content: data.get("content"),
     }
 
